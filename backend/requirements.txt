@@ -1,0 +1,11 @@
+fastapi>=0.115
+uvicorn[standard]>=0.34
+pydantic>=2.13
+pydantic-settings>=2.7
+python-dotenv>=1.0
+python-multipart>=0.0.20
+openai>=2.24
+foundry-local-sdk==1.2.4
+chromadb>=0.5
+pymupdf>=1.25
+langchain-text-splitters>=0.3

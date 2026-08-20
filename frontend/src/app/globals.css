@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #fbfaf6;
+  --surface: #ffffff;
+  --surface-sunken: #f2efe8;
+  --ink: #201e1a;
+  --mute: #756e62;
+  --line: rgba(32, 30, 26, 0.13);
+  --line-strong: rgba(32, 30, 26, 0.24);
+  --ember: #b8551e;
+  --ember-ink: #7a3812;
+  --ember-soft: #f6e3d2;
+  --verified: #2c6a58;
+  --verified-soft: #dfece5;
+  --danger: #a13b2f;
+  --focus: #1c5fa8;
+}
+
+:root[data-theme="dark"] {
+  --paper: #16151a;
+  --surface: #1f1e24;
+  --surface-sunken: #131217;
+  --ink: #f1ede4;
+  --mute: #a29c8e;
+  --line: rgba(241, 237, 228, 0.13);
+  --line-strong: rgba(241, 237, 228, 0.26);
+  --ember: #e08a49;
+  --ember-ink: #f4c896;
+  --ember-soft: rgba(224, 138, 73, 0.16);
+  --verified: #5cb69a;
+  --verified-soft: rgba(92, 182, 154, 0.16);
+  --danger: #d9695a;
+  --focus: #6ba9e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #16151a;
+    --surface: #1f1e24;
+    --surface-sunken: #131217;
+    --ink: #f1ede4;
+    --mute: #a29c8e;
+    --line: rgba(241, 237, 228, 0.13);
+    --line-strong: rgba(241, 237, 228, 0.26);
+    --ember: #e08a49;
+    --ember-ink: #f4c896;
+    --ember-soft: rgba(224, 138, 73, 0.16);
+    --verified: #5cb69a;
+    --verified-soft: rgba(92, 182, 154, 0.16);
+    --danger: #d9695a;
+    --focus: #6ba9e8;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-ink: var(--ink);
+  --color-mute: var(--mute);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ember: var(--ember);
+  --color-ember-soft: var(--ember-soft);
+  --color-verified: var(--verified);
+  --color-verified-soft: var(--verified-soft);
+  --color-danger: var(--danger);
+  --color-focus: var(--focus);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  background: var(--paper);
+  color-scheme: light dark;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--ember-soft);
+  color: var(--ember-ink, var(--ember));
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.status-dot {
+  position: relative;
+}
+.status-dot::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.35;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .status-dot--live::before {
+    animation: pulse-ring 2.2s ease-out infinite;
+  }
+  @keyframes pulse-ring {
+    0% {
+      opacity: 0.45;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2.1);
+    }
+  }
+}
