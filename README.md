@@ -95,6 +95,4 @@ Bunların hiçbiri "her soruya özel bir yama" değil — yalnızca iki soru tü
 - Foundry Local'ın dinlediği port sabit değildir (`foundry service status` ile değişebilir); değişirse `backend/.env`'deki `FOUNDRY_BASE_URL` elle güncellenmelidir.
 - Aynı anda birden fazla belge yüklüyse ve konular örtüşüyorsa, özellikle genel/özet sorularında arama yanlış belgeden örnek getirebilir — tek belgeyle çalışmak önerilir (istenmeyen belgeyi "Sil" ile kaldırın).
 
-## Geliştirme Notları
 
-Bu proje `PLAN.md`'deki fazlı yaklaşımla (FAZ 0-4) geliştirildi; her fazın kurulumu, test sonuçları, kabul kriterleri, karşılaşılan hatalar ve alınan mimari kararlar `LEARNING.md`'de ayrıntılı olarak belgelenmiştir.
